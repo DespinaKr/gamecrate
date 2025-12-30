@@ -8,12 +8,12 @@ import premiumBox from "@/assets/premium-box.jpg";
 import standardBox from "@/assets/standard-box.jpg";
 
 const pastBoxes = [
-  { id: 1, name: "January 2024 - Cyber Quest", theme: "RPG", price: 45, image: premiumBox, rating: 4.9 },
-  { id: 2, name: "December 2023 - Winter Warfare", theme: "FPS", price: 42, image: standardBox, rating: 4.8 },
-  { id: 3, name: "November 2023 - Pixel Legends", theme: "Retro", price: 40, image: premiumBox, rating: 4.9 },
-  { id: 4, name: "October 2023 - Haunted Realms", theme: "Indie", price: 38, image: standardBox, rating: 4.7 },
-  { id: 5, name: "September 2023 - Space Raiders", theme: "FPS", price: 42, image: premiumBox, rating: 4.8 },
-  { id: 6, name: "August 2023 - Summer Quest", theme: "RPG", price: 40, image: standardBox, rating: 4.6 },
+  { id: 1, name: "January 2024 - Cyber Quest", theme: "RPG", price: 65, image: premiumBox, rating: 4.9 },
+  { id: 2, name: "December 2023 - Winter Warfare", theme: "FPS", price: 45, image: standardBox, rating: 4.8 },
+  { id: 3, name: "November 2023 - Pixel Legends", theme: "Retro", price: 68, image: premiumBox, rating: 4.9 },
+  { id: 4, name: "October 2023 - Haunted Realms", theme: "Indie", price: 45, image: standardBox, rating: 4.7 },
+  { id: 5, name: "September 2023 - Space Raiders", theme: "FPS", price: 65, image: premiumBox, rating: 4.8 },
+  { id: 6, name: "August 2023 - Summer Quest", theme: "RPG", price: 48, image: standardBox, rating: 4.6 },
 ];
 
 const addOns = [
@@ -112,7 +112,7 @@ const Shop = () => {
                     <CardContent className="p-5">
                       <h3 className="font-display font-bold text-lg mb-2">{box.name}</h3>
                       <div className="flex items-center justify-between">
-                        <span className="font-display text-2xl font-bold text-primary">${box.price}</span>
+                        <span className="font-display text-2xl font-bold text-primary">€{box.price}</span>
                         <Button 
                           variant="outline" 
                           size="sm"
@@ -140,7 +140,7 @@ const Shop = () => {
                       <h3 className="font-display font-bold text-lg mt-1 mb-2">{addon.name}</h3>
                       <p className="text-muted-foreground text-sm mb-4">{addon.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="font-display text-xl font-bold text-secondary">${addon.price}</span>
+                        <span className="font-display text-xl font-bold text-secondary">€{addon.price}</span>
                         <Button 
                           variant="secondary" 
                           size="sm"
