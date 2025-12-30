@@ -1,5 +1,7 @@
 # GameCrate — Indie Gaming Crates (Academic Project)
 
+## SITE ADDRESS : https://gamecrate-tau.vercel.app/
+
 > ⚠️ **Academic Use Only**  
 > We built this project exclusively for academic/educational purposes (coursework & portfolio). It is **not** intended for commercial use. All brand names and images remain the property of their respective owners.
 
@@ -182,9 +184,7 @@ Then populate `.env` with URL/KEY values if/when we hook it up.
 
 ## Deploy
 
-- **Vercel / Netlify** — Build command: `vite build` (or `npm run build`). Output directory: `dist/`.  
-- **Static hosting** — Upload the contents of `dist/` to your web server or object storage with a static site option.
-
+- **Vercel has been used for the deployment
 ---
 
 ## Roadmap
