@@ -77,7 +77,7 @@ const Shop = () => {
         <div className="fixed bottom-6 right-6 z-50">
           <Button variant="neon" size="lg" className="shadow-lg">
             <ShoppingCart className="w-5 h-5" />
-            {cartCount} items - ${cartTotal}
+            {cartCount} items - €{cartTotal}
           </Button>
         </div>
       )}

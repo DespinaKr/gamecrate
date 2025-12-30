@@ -86,12 +86,12 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-muted-foreground text-sm">
                 <Phone className="w-4 h-4 text-primary" />
-                1-800-GAME-BOX
+                30-210-GAME-BOX
               </li>
               <li className="flex items-start gap-3 text-muted-foreground text-sm">
                 <MapPin className="w-4 h-4 text-primary mt-0.5" />
                 123 Gamer Street<br />
-                Los Angeles, CA 90001
+                Athens, 10301
               </li>
             </ul>
           </div>
@@ -100,7 +100,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-border/30 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © 2024 GameCrate. All rights reserved.
+            © 2025 GameCrate. All rights reserved.
           </p>
           <div className="flex gap-6">
             {["Privacy Policy", "Terms of Service", "Cookie Policy"].map((item) => (

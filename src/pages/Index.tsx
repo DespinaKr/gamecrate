@@ -400,7 +400,7 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-5xl font-bold text-primary">$29</span>
+                  <span className="font-display text-5xl font-bold text-primary">€29</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
                 <ul className="space-y-3">
@@ -438,7 +438,7 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-5xl font-bold text-secondary">$49</span>
+                  <span className="font-display text-5xl font-bold text-secondary">€59</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
                 <ul className="space-y-3">

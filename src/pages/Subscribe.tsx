@@ -43,14 +43,14 @@ const plans = [
       "Gaming accessories",
       "Energy snacks pack",
       "1 digital game code",
-      "Free shipping",
+      "Standard shipping",
     ],
     popular: false,
   },
   {
     id: "premium",
     name: "Premium Crate",
-    price: 49,
+    price: 59,
     image: premiumBox,
     features: [
       "8-12 premium items per box",
@@ -60,7 +60,7 @@ const plans = [
       "2-3 digital game codes",
       "Early access to new releases",
       "Exclusive member discounts",
-      "Priority shipping",
+      "Free shipping",
     ],
     popular: true,
   },
@@ -214,7 +214,7 @@ const Subscribe = () => {
                         "font-display text-4xl font-bold",
                         plan.popular ? "text-secondary" : "text-primary"
                       )}>
-                        ${plan.price}
+                        €{plan.price}
                       </span>
                       <span className="text-muted-foreground">/month</span>
                     </div>
@@ -257,7 +257,7 @@ const Subscribe = () => {
                   <CardContent className="p-4 flex items-center justify-between">
                     <div>
                       <h3 className="font-semibold">{addOn.name}</h3>
-                      <p className="text-primary font-display font-bold">+${addOn.price}</p>
+                      <p className="text-primary font-display font-bold">+€{addOn.price}</p>
                     </div>
                     <div className={cn(
                       "w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors",
@@ -299,7 +299,7 @@ const Subscribe = () => {
                 )}
                 <div className="border-t border-border pt-4 flex justify-between text-2xl">
                   <span className="font-display font-bold">Total:</span>
-                  <span className="font-display font-bold text-gradient">${calculateTotal()}/month</span>
+                  <span className="font-display font-bold text-gradient">€{calculateTotal()}/month</span>
                 </div>
               </div>
               <Button 
