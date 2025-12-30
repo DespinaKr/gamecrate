@@ -1,159 +1,206 @@
-# GameCrate — Indie Gaming Crates
+# GameCrate — Indie Gaming Crates (Academic Project)
 
-**One‑woman project από τη Despina Karakosta.** Ιδρύθηκε στην **Ελλάδα (2022)**.  
-GameCrate είναι μια μοντέρνα single‑page εφαρμογή για συνδρομητικά gaming crates (Standard / Premium) με έντονη neon αισθητική, smooth animations και καθαρή αρχιτεκτονική.
+> ⚠️ **Academic Use Only**  
+> We built this project exclusively for academic/educational purposes (coursework & portfolio). It is **not** intended for commercial use. All brand names and images remain the property of their respective owners.
 
-> 💡 Στόχος: εντυπωσιακή παρουσίαση, απλή ροή αγοράς/δώρου και εύκολη μελλοντική επέκταση.
+We’re an independent project led by **Despina Karakosta**, founded in **Greece (2022)**.  
+GameCrate is a modern React + Vite + TypeScript single-page app that showcases subscription gaming crates (Standard / Premium) with a dark neon aesthetic and subtle micro-interactions.
 
 ![Hero](src/assets/hero-landing.jpg)
 
 ---
 
-## Περιεχόμενα
-- [Χαρακτηριστικά](#χαρακτηριστικά)
-- [Τεχνολογίες](#τεχνολογίες)
-- [Δομή Project](#δομή-project)
-- [Σελίδες](#σελίδες)
-- [Γρήγορη Εκκίνηση](#γρήγορη-εκκίνηση)
-- [Μεταβλητές Περιβάλλοντος (προαιρετικό)](#μεταβλητές-περιβάλλοντος-προαιρετικό)
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Pages](#pages)
+- [Quick Start](#quick-start)
+- [Environment Variables (optional)](#environment-variables-optional)
 - [Scripts](#scripts)
-- [Στυλ & UI](#στυλ--ui)
-- [Οδικός Χάρτης](#οδικός-χάρτης)
-- [Άδεια Χρήσης](#άδεια-χρήσης)
+- [Style & UI](#style--ui)
+- [Supabase (optional)](#supabase-optional)
+- [Deploy](#deploy)
+- [Roadmap](#roadmap)
+- [License / Usage](#license--usage)
 
 ---
 
-## Χαρακτηριστικά
+## Features
 
-- 🎬 **Hero Cinematic**: μία hero εικόνα με neon εφέ (sparkles, glint sweep, parallax tilt στο hover) χωρίς να “φωτίζει” το dark background.
-- 🧊 **Καθαρό layout** με επαναχρησιμοποιήσιμα components (`Layout`, `Card`, `Button` κ.λπ.).
-- 🧭 **Πλοήγηση** με `react-router-dom`.
-- 🛍️ **Plans/Τιμολόγηση**: Standard (€29) & Premium (€59) + gift flow (διάρκειες, tiers).
-- 💌 **Gift/Contact** ροές με απλή φόρμα και placeholders για αποστολές email.
-- 🧩 **Modular αρχιτεκτονική**: εύκολη προσθήκη νέων sections/σελίδων.
-- ✨ **Neon theme & micro‑interactions** με `framer-motion` και `lucide-react` icons.
+- 🎬 **Hero Cinematic** — single hero image with neon corner flares, sparkles, a glint sweep, and gentle parallax tilt on hover. Dark background stays dark (no global glow).
+- 🧊 **Reusable components** — `Layout`, `Card`, `Button`, etc. to keep the UI consistent and easy to extend.
+- 🧭 **Routing** — clean navigation with `react-router-dom`.
+- 🛍️ **Plans** — Standard (€29) and Premium (€59) plus a gift flow (durations, recipient, message).
+- 💌 **Gift / Contact flows** — simple forms ready to be connected to email/backends.
+- ✨ **Neon theme & micro-interactions** — tasteful motion with `framer-motion` and `lucide-react` icons.
 
-## Τεχνολογίες
+---
 
-- **React + Vite + TypeScript**
-- **Tailwind CSS** (utility-first styling)
-- **shadcn/ui** components
+## Tech Stack
+
+- **React 18 + Vite + TypeScript**
+- **Tailwind CSS** + **shadcn/ui** (UI primitives)
 - **Framer Motion** (animations)
-- **Lucide React** (εικονίδια)
-- *(προαιρετικά)* **Supabase** (φάκελος integrations για μελλοντικά δεδομένα/αυθεντικοποίηση)
+- **Lucide React** (icons)
+- *(optional)* **Supabase** (integration folder prepared)
 
-## Δομή Project
+---
+
+## Project Structure
+
+> Based on our current repository layout.
 
 ```
-src/
-├─ assets/
-│  ├─ hero-landing.jpg
-│  ├─ premium-box.jpg
-│  ├─ standard-box.jpg
-│  └─ logo.png
-├─ components/
-│  ├─ layout/
-│  │  └─ Layout.tsx
-│  ├─ ui/           # κουμπιά, κάρτες κ.λπ. (shadcn/ui)
-│  └─ NavLink.tsx
-├─ hooks/
-├─ integrations/
-│  └─ supabase/
-├─ lib/
-├─ pages/
-│  ├─ Index.tsx          # Landing (Hero, Plans, Features)
-│  ├─ GiftCrate.tsx      # Δώρο – επιλογή tier/διάρκειας
-│  ├─ About.tsx          # Ίδρυση 2022, Ελλάδα, Despina (one‑woman project)
-│  ├─ Contact.tsx        # Στοιχεία επικοινωνίας & φόρμα
-│  └─ HowItWorks.tsx     # (προαιρετικό) οδηγός
-├─ App.tsx
-├─ App.css / index.css
-├─ main.tsx
-└─ vite-env.d.ts
+gamecrate/
+├─ .idea/                 # IDE settings
+├─ dist/                  # production build (generated by Vite)
+├─ node_modules/          # dependencies
+├─ public/                # static assets served as-is (favicon, robots, etc.)
+├─ src/
+│  ├─ assets/             # hero-landing.jpg, premium-box.jpg, standard-box.jpg, logo.png
+│  ├─ components/
+│  │  ├─ layout/          # Layout.tsx
+│  │  └─ ui/              # shadcn/ui primitives & wrappers
+│  ├─ hooks/
+│  ├─ integrations/
+│  │  └─ supabase/
+│  ├─ lib/
+│  ├─ pages/
+│  │  ├─ Index.tsx        # Landing (hero, genres, plans, features, CTAs)
+│  │  ├─ GiftCrate.tsx    # Gift flow (tier, duration, recipient, message)
+│  │  ├─ About.tsx        # About GameCrate (founded 2022, Greece, indie-led)
+│  │  ├─ Contact.tsx      # Contact details & form
+│  │  └─ HowItWorks.tsx   # (optional) steps & FAQ
+│  ├─ App.tsx
+│  ├─ App.css
+│  ├─ index.css
+│  ├─ main.tsx
+│  └─ vite-env.d.ts
+├─ supabase/
+│  └─ config.toml         # local dev settings (if we use Supabase CLI)
+├─ index.html
+├─ tailwind.config.ts
+├─ postcss.config.js
+├─ vite.config.ts
+├─ tsconfig.json
+├─ tsconfig.app.json
+├─ tsconfig.node.json
+├─ components.json        # shadcn/ui config
+├─ package.json
+├─ package-lock.json      # or pnpm-lock.yaml / bun.lockb (use one tool)
+├─ bun.lockb
+├─ .env                   # local env vars (never commit secrets)
+├─ .gitignore
+└─ README.md
 ```
 
-> Η δομή μπορεί να διαφέρει ελαφρά ανά branch/commit – αυτή είναι η τρέχουσα πρόθεση αρχιτεκτονικής.
+---
 
-## Σελίδες
+## Pages
 
-- **Landing / Index**: Hero, genres, plans, χαρακτηριστικά, CTA.
-- **Gift**: Επιλογή tier (Standard/Premium) & διάρκειας (3/6/12 μήνες), αποδέκτης & μήνυμα.
-- **About**: Ιστορία/ταυτότητα — *Independent, one‑woman project by Despina Karakosta. Founded in Greece (2022).* 
-- **Contact**: Email/τηλέφωνο/διεύθυνση, φόρμα μηνύματος.
-- **How it works** *(αν υπάρχει)*: βήματα συνδρομής/αποστολής.
+- **/** — **Landing / Index**: Hero, genre cards, plans preview, feature grid, strong CTAs.
+- **/gift** — **GiftCrate**: Choose tier (Standard/Premium) and duration (3/6/12 months), recipient details, personal message.
+- **/about** — **About**: “We’re an indie project led by Despina Karakosta, founded in Greece (2022).”
+- **/contact** — **Contact**: Email/phone/address with a contact form.
+- **/how-it-works** — **How It Works** (optional): steps, FAQ, and helpful policies.
 
-## Γρήγορη Εκκίνηση
+---
 
-> Προαπαιτούμενα: **Node.js 18+** και **npm** (ή `pnpm`/`yarn`).
+## Quick Start
+
+**Prerequisites:** Node.js **18+** and a package manager (**npm**, **pnpm**, or **bun**).
 
 ```bash
-# 1) Κλωνοποίηση
+# 1) Clone
 git clone https://github.com/DespinaKr/gamecrate.git
 cd gamecrate
 
-# 2) Εγκατάσταση deps
-npm install    # ή pnpm install / yarn
+# 2) Install
+npm install            # or: pnpm install   |   bun install
 
 # 3) Development
 npm run dev
 
-# 4) Build παραγωγής
-npm run build
+# 4) Production build
+npm run build          # outputs to ./dist
 
-# 5) Προεπισκόπηση του build
+# 5) Preview the build locally
 npm run preview
 ```
 
-## Μεταβλητές Περιβάλλοντος (προαιρετικό)
+---
 
-Αν ενεργοποιήσεις Supabase ή εξωτερικές υπηρεσίες, δημιούργησε `.env` στο root:
+## Environment Variables (optional)
+
+If we connect to external services (e.g., Supabase), create a `.env` at the repository root:
 
 ```bash
 # .env
-VITE_SUPABASE_URL=...
-VITE_SUPABASE_ANON_KEY=...
+VITE_SUPABASE_URL=your-url
+VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
+
+
+
+---
 
 ## Scripts
 
-- `dev` – Vite development server
-- `build` – παραγωγικό build
-- `preview` – τοπική προεπισκόπηση build
-
-*(Αν χρησιμοποιείς `pnpm`/`yarn`, αντικατάστησε αναλόγως.)*
-
-## Στυλ & UI
-
-- Tailwind theme με neon αποχρώσεις (primary/secondary) και dark background.
-- shadcn/ui για βασικά components (Card, Button, κ.λπ.).
-- Framer Motion για:
-  - hover **parallax tilt** του hero,
-  - **glint sweep** & **sparkles**,
-  - μικρά transitions στα sections.
-- Εικόνες στο `src/assets/` (π.χ. `hero-landing.jpg`, `premium-box.jpg`, `standard-box.jpg`, `logo.png`).
-
-## Οδικός Χάρτης
-
-- [ ] Hook up πραγματικές πληρωμές/checkout.
-- [ ] Αποστολή gift emails (scheduler + transactional service).
-- [ ] User accounts (Supabase Auth) & preferences per genre/platform.
-- [ ] CMS/Panel για διαχείριση μηνιαίων boxes.
-- [ ] i18n (EL/EN) & βελτιώσεις προσβασιμότητας (a11y).
-
-## Άδεια Χρήσης
-
-© 2025 **Despina Karakosta**. Όλα τα δικαιώματα διατηρούνται.  
-Ο κώδικας/περιεχόμενο προορίζεται για portfolio/demo & προσωπική χρήση.  
-Για εμπορική αξιοποίηση/διάθεση, επικοινώνησε πρώτα μαζί μου.
+- `dev` — Vite development server  
+- `build` — production build  
+- `preview` — local preview for the build
 
 ---
 
-### Credits
-- Εικονίδια: [lucide.dev](https://lucide.dev)
-- UI: [shadcn/ui](https://ui.shadcn.com)
-- Animations: [Framer Motion](https://www.framer.com/motion/)
+## Style & UI
+
+- Dark neon Tailwind theme (primary/secondary accents).
+- shadcn/ui for common components (Card, Button, etc.).
+- Framer Motion for the hero (parallax tilt, glint sweep, sparkles) and section transitions.
+- Assets live in `src/assets/` (e.g., `hero-landing.jpg`, `premium-box.jpg`, `standard-box.jpg`, `logo.png`).
 
 ---
 
-> Αν θέλεις να αλλάξουμε άδεια (MIT/Apache-2.0 κ.λπ.), άνοιξε ένα issue ή ενημέρωσέ με και θα προσαρμόσω το `README.md` + `LICENSE`.
+## Supabase (optional)
+
+We include a ready folder for future integration.
+
+**Local development with Supabase CLI (optional):**
+```bash
+# Install CLI (one-time)
+# macOS: brew install supabase/tap/supabase
+# Windows/Linux: see official docs
+
+supabase start
+supabase status
+supabase stop
+```
+Then populate `.env` with URL/KEY values if/when we hook it up.
+
+---
+
+## Deploy
+
+- **Vercel / Netlify** — Build command: `vite build` (or `npm run build`). Output directory: `dist/`.  
+- **Static hosting** — Upload the contents of `dist/` to your web server or object storage with a static site option.
+
+---
+
+## Roadmap
+
+- [ ] Payments/Checkout (e.g., Stripe)  
+- [ ] Gift emails (transactional service)  
+- [ ] Accounts & preferences (Supabase Auth/DB)  
+- [ ] Admin/CMS for monthly crate management  
+- [ ] i18n (EN/EL) and a11y improvements
+
+---
+
+## License / Usage
+
+© 2025 **Despina Karakosta**. All rights reserved.  
+This repository is provided **for academic/educational purposes only** (class assignments, demonstrations, personal portfolio).  
+Commercial use, distribution of trademarked assets, or resale is **not permitted**.  
+A project for the University of the aegean 
 
